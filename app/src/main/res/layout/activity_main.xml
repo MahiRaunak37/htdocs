@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- title of the UPASTHIT Software  id = title, upasthit store the UPASTHIT string, marginTop 35 -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/upasthit"
+        android:textSize="27sp"
+        android:textAlignment="center"
+        android:layout_marginTop="35sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        />
+
+    <!-- scan button id = scanBtn text = Scan QR padding 15sp layout gravity center-->
+    <Button
+        android:id="@+id/scanBtn"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:padding="15sp"
+        android:layout_marginTop="100sp"
+        android:backgroundTint="#1565C0"
+        android:layout_gravity="center"
+        android:text="@string/scan_qr"/>
+
+    <!-- textview id = textFormat this text view show the Format of the Code either be QR Code or BAR Code  -->
+    <TextView
+        android:id="@+id/textFormat"
+        android:text="@string/messageFormat"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+
+    <!-- text id = textContent  this textview show the result of the result of the QR/BAR code and that data with Bar code will be send to the server-->
+    <TextView
+        android:id="@+id/textContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:text="@string/messageContent"
+        android:visibility="gone"
+        />
+
+    <!--button id = connBtn after the getting IP address and port no of the server the click this button it send to the other acitivity with accept the request of the this server -->
+    <Button
+        android:id="@+id/connBtn"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:padding="15sp"
+        android:layout_marginTop="50sp"
+        android:backgroundTint="#1565C0"
+        android:layout_gravity="center"
+        android:text="@string/connect"
+        android:visibility="gone"/>
+
+
+</LinearLayout>

@@ -2,7 +2,7 @@
     <string name="app_name">UPASTHIT</string>
     <string name="scan_qr">Scan QR</string>
     <string name="messageFormat">Message Format</string>
-    <string name="messageContent">message Content</string>
+    <string name="messageContent">GPS Location</string>
     <string name="upasthit">UPASTHIT</string>
     <string name="connect">Connect</string>
 

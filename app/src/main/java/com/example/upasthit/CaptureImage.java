@@ -88,7 +88,8 @@ public class CaptureImage extends AppCompatActivity {
         if (requestCode == 100) {
             //ip
             String ipAddr1 = getIntent().getStringExtra("ip");
-            ipAddress.setText(ipAddr1);
+            String gpsLocation = getIntent().getStringExtra("gps");
+            //ipAddress.setText(gpsLocation);
 
             //get Capture Image
 
@@ -142,6 +143,7 @@ public class CaptureImage extends AppCompatActivity {
                                 Map <String, String> Params = new HashMap<String, String>();
                                 Params.put("data",result);
                                 Params.put("idOfPhotos",idOfPhoto);
+                                Params.put("gpsLocation",gpsLocation);
                                 return Params;
                             }
                         };

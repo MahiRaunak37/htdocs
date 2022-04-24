@@ -26,7 +26,7 @@
         android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:padding="15sp"
-        android:layout_marginTop="100sp"
+        android:layout_marginTop="70sp"
         android:backgroundTint="#1565C0"
         android:layout_gravity="center"
         android:text="@string/scan_qr"/>
@@ -48,7 +48,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="30dp"
+        android:layout_margin="25dp"
+        android:text="@string/messageContent"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/gpsLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="25dp"
         android:text="@string/messageContent"
         android:visibility="gone"
         />
@@ -59,7 +69,7 @@
         android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:padding="15sp"
-        android:layout_marginTop="50sp"
+        android:layout_marginTop="35sp"
         android:backgroundTint="#1565C0"
         android:layout_gravity="center"
         android:text="@string/connect"

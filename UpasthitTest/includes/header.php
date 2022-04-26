@@ -24,7 +24,6 @@
                             <li class="nav-item"><a class="nav-link" href="login.php"><span class="fa fa-sign-in"></span> Login</a></li>
                             <li class="nav-item"><a class="nav-link" href="logout.php"><span class="fa fa-sign-in"></span> Logout</a></li>
 
-                          
                         </ul>
                     </div>
                 </div>

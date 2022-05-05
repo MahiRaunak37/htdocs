@@ -43,7 +43,7 @@ import android.util.Base64;
 public class CaptureImage extends AppCompatActivity {
     TextView ipAddress;
     ImageView imageView;
-    Button btOpen,btSend;
+    Button btOpen,btSend,btnExit;
     //String ipAddr = getIntent().getStringExtra("ip");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +56,7 @@ public class CaptureImage extends AppCompatActivity {
         imageView = findViewById(R.id.image_view);
         btOpen = findViewById(R.id.button);
         btSend = findViewById(R.id.Send);
+        btnExit = findViewById(R.id.exit);
 
         //Request for camera permission
         if(ContextCompat.checkSelfPermission(CaptureImage.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
@@ -75,7 +76,7 @@ public class CaptureImage extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        ////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////
         String ID = Settings.Secure.getString(getContentResolver(),Settings.Secure.ANDROID_ID);
         String id = ID.toUpperCase();
 
@@ -152,6 +153,42 @@ public class CaptureImage extends AppCompatActivity {
                         //////////////////////////////////////////////////////////////////////////////////////////////////////
 
                     }
+                }
+            });
+
+            btnExit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String url = ipAddr1;
+                    String ext = "exit";
+                    StringRequest exitRequest = new StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    Toast.makeText(CaptureImage.this,ext.toString(), Toast.LENGTH_LONG).show();
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    Toast.makeText(CaptureImage.this, error.toString(), Toast.LENGTH_LONG).show();
+                                }
+                            }
+                    ){
+                        @Override
+                        protected Map<String,String> getParams()
+                        {
+                            Map <String, String> Params = new HashMap<String, String>();
+                            Params.put("ext",ext);
+                            return Params;
+                        }
+                    };
+                    RequestQueue exitQueue = Volley.newRequestQueue(CaptureImage.this);
+                    exitQueue.add(exitRequest);
+
+                    //Intent intent = new Intent(MainActivity.this, CaptureImage.class);
+                    Intent intent = new Intent(CaptureImage.this, MainActivity.class);
+                    startActivity(intent);
                 }
             });
 
